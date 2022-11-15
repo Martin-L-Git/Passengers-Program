@@ -30,6 +30,21 @@ public class passengerProgram {
             Passenger.swapPassengers();
         }
 
+        // Renames a passenger given seat number
+        else if (choice == 4) {
+            Passenger.renamePassenger();
+        }
+        
+        // Counts the passengers on the plane and returns a number
+        else if (choice == 5) {
+            Passenger.countPassengers();
+        }
+
+        else if (choice == 6) {
+            Passenger.countPassengers();
+        }
+
+
     }
 
 

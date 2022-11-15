@@ -1,0 +1,22 @@
+SkyBox Ltd. Is a private company that owns a number of jet airplanes that they use to ferry wellpaying customers between international destinations. 
+Every airplane has a maximum of 12 seats (not including seats for the pilots and other crew). The company needs help with a solution for keeping
+track of passenger manifests. A customer might call SkyBox and say that they need, for example, to
+send 9 people from London to Madrid the following Wednesday. However, between the initial call and takeoff, plans can change, people can get sick, 
+and the manifest thus needs to be changed as well.
+You have been hired to create a simple application for managing the passenger manifest.
+Object Oriented Analysis resulted in a class for Passenger:
+
+Passengers are to be stored in an Array of length 12.
+
+Your program must implement the following functionality:
+• Insert passenger The system takes information about passenger name and age from the user
+and inserts the passenger in the first available seat.
+• Remove passenger The system takes a seat number from the user, and removes the
+passenger on that seat from the manifest
+• Switch seats The system takes two seat numbers as input from the user, and switches out
+the passengers so that the passenger that was occupying the first seat now occupies the
+second, and vice versa.
+• Rename passenger Mistakes can happen during data entry, and the system must be able to
+re-name passengers. The system takes a seat number, and a passenger name and updates
+the name for the passenger with the given seat number
+• Count passengers prints the current number of passengers in the manifest

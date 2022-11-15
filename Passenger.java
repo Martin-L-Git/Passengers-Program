@@ -37,19 +37,6 @@ public class Passenger {
         return passengers_list;
     }
 
-    public int getSeatNumber(Passenger passenger){
-        int seat_number = 100;
-        for (int i = 0; i < passengers_list.length; i++){
-            if (passengers_list[i].equals(passenger)){
-                seat_number = i;
-                break;
-            }
-            else {
-                System.out.println("Passenger does not have a seat");
-            }
-        }
-        return seat_number;
-    }
 
 
     // General methods
@@ -63,6 +50,23 @@ public class Passenger {
             }   
         }    
     return passenger_seat;
+    }
+
+    public static int countPassengers(){
+        int count = 0;
+        for (int i = 0; i < passengers_list.length; i++){
+            if (passengers_list[i] != null){
+                count ++;
+            }
+        }   return count;
+    }
+
+    public static void printPassengerManifest(){
+        for (int i = 0; i < passengers_list.length; i++){
+            if (passengers_list[i] != null){
+                System.out.println("Seat: " + (i+1) + " Passenger: " + passengers_list[i].toString());
+            }
+        }
     }
 
     // Passenger methods
@@ -88,9 +92,9 @@ public class Passenger {
 
     public static void swapPassengers(){
         
-        System.out.println("Select first seat to swap");
+        System.out.println("Select first seat number to swap");
         int seat1 = myScanner.nextInt();
-        System.out.println("Select second seat to swap");
+        System.out.println("Select second seat number to swap");
         int seat2 = myScanner.nextInt();
 
         Passenger passenger1 = passengers_list[seat1];
@@ -100,6 +104,20 @@ public class Passenger {
 
         passengers_list[seat1] = passenger2;
         passengers_list[seat2] = passenger1;
+    }
+
+    public static void renamePassenger(){
+        System.out.println("What passenger would you like to change the name of? Please enter a seat number > ");
+        int seatNumber = myScanner.nextInt();
+        Passenger passenger = passengers_list[seatNumber];
+        System.out.println("Please input a new name for " + passenger.getName() + " at " + seatNumber);
+        String newName = myScanner.next();
+        passenger.setName(newName);
+        System.out.println("Name successfully changed!");
+    }
+
+    public String toString(){
+        return "Name " + this.name + ", Age " + this.age;
     }
 }
 
