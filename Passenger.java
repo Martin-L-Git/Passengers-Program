@@ -6,7 +6,9 @@ public class Passenger {
     private String name;
     private int age; 
     private static Passenger[] passengers_list = new Passenger [12];
+
     final static Scanner myScanner = new Scanner(System.in);
+
 
     public Passenger (String name, int age) {
         this.name = name;
@@ -52,13 +54,14 @@ public class Passenger {
     return passenger_seat;
     }
 
-    public static int countPassengers(){
+    public static void countPassengers(){
         int count = 0;
         for (int i = 0; i < passengers_list.length; i++){
             if (passengers_list[i] != null){
                 count ++;
             }
-        }   return count;
+        }   
+        System.out.println("Passenger count: " + count);
     }
 
     public static void printPassengerManifest(){
@@ -78,14 +81,14 @@ public class Passenger {
         System.out.println("What is the age of the passenger?");
         int age = myScanner.nextInt();
         Passenger passenger = new Passenger(name, age);
-        passengers_list[seat_index] = passenger;
+        passengers_list[seat_index] = new Passenger(name, age);
         System.out.println("Passenger "+ passenger.getName() + " is now placed at seat " + (seat_index+1));
     }
 
     public static void removePassenger(){
         System.out.println("What from which seat do you wish to remove a passenger?");
         int seatNumber = myScanner.nextInt();
-        Passenger to_be_removed = passengers_list[seatNumber];
+        Passenger to_be_removed = passengers_list[seatNumber-1];
         System.out.println("You have removed " + to_be_removed.getName() + " from his/her seat");
         passengers_list[seatNumber] = null;
     }
@@ -93,9 +96,9 @@ public class Passenger {
     public static void swapPassengers(){
         
         System.out.println("Select first seat number to swap");
-        int seat1 = myScanner.nextInt();
+        int seat1 = myScanner.nextInt()-1;
         System.out.println("Select second seat number to swap");
-        int seat2 = myScanner.nextInt();
+        int seat2 = myScanner.nextInt()-1;
 
         Passenger passenger1 = passengers_list[seat1];
         Passenger passenger2 = passengers_list[seat2];
@@ -110,7 +113,7 @@ public class Passenger {
         System.out.println("What passenger would you like to change the name of? Please enter a seat number > ");
         int seatNumber = myScanner.nextInt();
         Passenger passenger = passengers_list[seatNumber];
-        System.out.println("Please input a new name for " + passenger.getName() + " at " + seatNumber);
+        System.out.println("Please input a new name for " + passenger.getName() + " at seat " + seatNumber);
         String newName = myScanner.next();
         passenger.setName(newName);
         System.out.println("Name successfully changed!");
