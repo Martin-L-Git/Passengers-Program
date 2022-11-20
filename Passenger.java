@@ -111,7 +111,7 @@ public class Passenger {
 
     public static void renamePassenger(){
         System.out.println("What passenger would you like to change the name of? Please enter a seat number > ");
-        int seatNumber = myScanner.nextInt();
+        int seatNumber = myScanner.nextInt()-1;
         Passenger passenger = passengers_list[seatNumber];
         System.out.println("Please input a new name for " + passenger.getName() + " at seat " + seatNumber);
         String newName = myScanner.next();
