@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
 
@@ -6,6 +7,7 @@ public class Passenger {
     private String name;
     private int age; 
     private static Passenger[] passengers_list = new Passenger [12];
+    private static ArrayList<Passenger> passengers = new ArrayList <Passenger>();
 
     final static Scanner myScanner = new Scanner(System.in);
 
@@ -67,10 +69,11 @@ public class Passenger {
     public static void printPassengerManifest(){
         for (int i = 0; i < passengers_list.length; i++){
             if (passengers_list[i] != null){
-                System.out.println("Seat: " + (i+1) + " Passenger: " + passengers_list[i].toString());
+                System.out.println("Seat: " + (i+1) + " Passenger: " + passengers_list[i]);
             }
         }
     }
+    
 
     // Passenger methods
 

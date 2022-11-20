@@ -81,6 +81,7 @@ public class passengerProgram {
             
         }
 
+        // Prints out all passengers
         else if (choice == 6) {
             Passenger.printPassengerManifest();
             backToMenu();
