@@ -1,13 +1,14 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class passengerProgram {
 
     final static Scanner myScanner = new Scanner(System.in);
-    static Passenger[] passengers = Passenger.getPassengerList();
+    static ArrayList<Passenger> passengers_list = Passenger.getPassengerList();
    
 
     public static void main(String[] args) {
-        menu(passengers);
+        menu(passengers_list);
         }
 
 
@@ -15,14 +16,14 @@ public class passengerProgram {
         System.out.println("For menu enter 1, to exit enter 2");
             int goBack = myScanner.nextInt();
             if (goBack == 1){
-                menu(passengers);
+                menu(passengers_list);
             }
             else if (goBack == 2){
                 System.exit(0);
             }
     }
 
-    public static void menu(Passenger[] passengers){
+    public static void menu(ArrayList<Passenger> passengers_list){
 
         System.out.println("Write the number in which order you'd like to proceed");
         System.out.println(" 1. Add Passenger \n 2. Remove Passenger \n 3. Switch Seats \n 4. Rename Passenger \n 5. Count Passengers \n 6. Print Passenger Manifest");
