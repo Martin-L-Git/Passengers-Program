@@ -7,7 +7,6 @@ public class Passenger {
     private String name;
     private int age; 
     private static Passenger[] passengers_list = new Passenger [12];
-    private static ArrayList<Passenger> passengers = new ArrayList <Passenger>();
 
     final static Scanner myScanner = new Scanner(System.in);
 
@@ -128,7 +127,7 @@ public class Passenger {
 
 
 
-    
+
 
 
 
